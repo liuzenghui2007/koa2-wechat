@@ -3,8 +3,8 @@
 module.exports = {
     port: 80,
     wx: {
-        token: 'aafcfa1af9df53246005489d75ed8474',
+        token: 'wechat',
         appid: 'wx0d269aad5206a1f9',
-        encodingAESKey: 'xxx'
+        encodingAESKey: 'dygnsT30eE9KzCgL8tgydc7ptYSvenDSpdEez1su5zP'
     }
 }
