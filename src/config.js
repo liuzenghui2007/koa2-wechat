@@ -1,10 +1,10 @@
 // base config
 
 module.exports = {
-    port: 3000,
+    port: 80,
     wx: {
-        token: 'xxx',
-        appid: 'xxx',
+        token: 'aafcfa1af9df53246005489d75ed8474',
+        appid: 'wx0d269aad5206a1f9',
         encodingAESKey: 'xxx'
     }
 }
