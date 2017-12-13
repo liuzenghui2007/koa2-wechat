@@ -1,12 +1,13 @@
 // index controller
 const wx = require('../util/wx')
 
-exports.getHandle = async (ctx, next) => {
+exports.getHandle = async(ctx, next) => {
+    console.log(ctx)
     const result = wx.auth(ctx)
     if (result) {
         ctx.body = ctx.query.echostr
     } else {
-        ctx.body = { code: -1, msg: "You aren't wechat server !"}
+        ctx.body = { code: -1, msg: "You aren't wechat server !" }
     }
 }
 
@@ -21,14 +22,14 @@ exports.postHandle = (ctx, next) => {
         ctx.body = 'error request.'
         return;
     }
-    
+
     MsgType = msg.MsgType[0]
 
     switch (MsgType) {
         case 'text':
             result = wx.message.text(msg, msg.Content)
             break;
-        default: 
+        default:
             result = 'success'
     }
     ctx.res.setHeader('Content-Type', 'application/xml')
