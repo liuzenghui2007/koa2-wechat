@@ -6,23 +6,26 @@ const xml = require('./xml')
 // 返回 true ／ false
 exports.auth = (ctx) => {
     const token = config.wx.token,
-          signature = ctx.query.signature,
-          timestamp = ctx.query.timestamp,
-          nonce = ctx.query.nonce
-        
+        signature = ctx.query.signature,
+        timestamp = ctx.query.timestamp,
+        nonce = ctx.query.nonce
+    console.log(token)
+    console.log(signature)
+    console.log(timestamp)
+    console.log(nonce)
         // 字典排序
-        const arr = [token, timestamp, nonce].sort()
-        const result = encode.sha1(arr.join(''))
+    const arr = [token, timestamp, nonce].sort()
+    const result = encode.sha1(arr.join(''))
 
-        if (result === signature) {
-            return true
-        } else {
-            return false
-        }
+    if (result === signature) {
+        return true
+    } else {
+        return false
+    }
 }
 
 exports.message = {
-    text (msg, content) {
+    text(msg, content) {
         return xml.jsonToXml({
             xml: {
                 ToUserName: msg.FromUserName,
