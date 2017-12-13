@@ -10,3 +10,5 @@
 npm install 
 node server.js
 ```
+
+github 连接不上
